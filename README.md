@@ -1,6 +1,6 @@
 # Ethereum-ChainList
 
-A curated Javascript Library of Ethereum chains list
+A Vanilla JS library to simply use EthereumList's data
 
 ## Usage
 
