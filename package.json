@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "jsdoc": "./node_modules/.bin/jsdoc ./lib/ethereum-lists.js --destination docs"
+    "jsdoc": "./node_modules/.bin/jsdoc ./lib/ethereum-lists.js README.md --destination docs"
   },
   "repository": {
     "type": "git",
