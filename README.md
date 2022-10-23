@@ -2,8 +2,17 @@
 
 A Vanilla JS library to simply use EthereumList's data
 
+---
+
 ## Usage
 
+### HTML
+```html
+<script src="https://raw.githubusercontent.com/dorianbayart/ethereum-lists/main/lib/ethereum-lists.min.js"></script>
+```
+See [example.html](https://github.com/dorianbayart/ethereum-lists/blob/main/example/example.html)
+
+### JS
 ```javascript
 const chains = await ChainList.fetch()
 
@@ -28,8 +37,48 @@ const txURL = ethereumMainNet.tx('0xe207224986764f5419887952f1923851bcf03d232689
 const blockURL = ethereumMainNet.block(15798835)
 // "https://etherscan.io/block/15798835"
 
+const chainName = chain.name()
+// "Ethereum Mainnet"
+const chainId = chain.chainId()
+// 1
+const shortName = chain.shortName() // see EIP-3770
+// "eth"
+const infoURL = chain.infoURL()
+// "https://ethereum.org"
+const {name, symbol, decimals}  = chain.nativeCurrency()
+// {"Ether", "ETH", 18}
+
 ```
+See [example.js](https://github.com/dorianbayart/ethereum-lists/blob/main/example/example.beautified.js)
+
+---
+
+## Dev
+
+### NPM Scripts
+
+#### Generate JSDoc
+```sh
+npm run jsdoc
+```
+
+#### Uglify - Minify lib
+```sh
+npm run uglify
+```
+
+#### Beautify example.js
+```sh
+npm run beautify-ex
+```
+
+#### Run all scripts at once
+```sh
+npm run all
+```
+
+---
 
 ## Datasource
 
-[ethereum-lists/chains](https://github.com/ethereum-lists/chains)
+[ethereum-lists/chains](https://github.com/ethereum-lists/chains) and their JSon data [chainid.network/chains.json](https://chainid.network/chains.json)

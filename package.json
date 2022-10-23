@@ -8,7 +8,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "jsdoc": "./node_modules/.bin/jsdoc ./lib/ethereum-lists.js README.md --destination docs"
+    "jsdoc": "rm -r ./docs/* && ./node_modules/.bin/jsdoc ./lib/ethereum-lists.js README.md --destination docs",
+    "uglify": "./node_modules/.bin/uglifyjs lib/ethereum-lists.js -o lib/ethereum-lists.min.js -c -m --comments",
+    "beautify-ex": "./node_modules/.bin/uglifyjs example/example.js -o example/example.beautified.js -b quote_style=single --comments",
+    "all": "npm run beautify-ex && npm run uglify && npm run jsdoc"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
   },
   "homepage": "https://github.com/dorianbayart/ethereum-lists#readme",
   "devDependencies": {
-    "jsdoc": "^3.6.11"
+    "jsdoc": "^3.6.11",
+    "uglify-js": "^3.17.3"
   }
 }
